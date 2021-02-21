@@ -1,0 +1,32 @@
+{
+  "itcenterbazaApp": {
+    "registered": {
+      "home": {
+        "title": "Registereds",
+        "createLabel": "Создать новый Registered",
+        "createOrEditLabel": "Создать или отредактировать Registered",
+        "notFound": "No Registereds found"
+      },
+      "created": "Новый Registered создан с идентификатором {{ param }}",
+      "updated": "Registered обновлен с идентификатором {{ param }}",
+      "deleted": "Registered удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Registered {{ id }}?"
+      },
+      "detail": {
+        "title": "Registered"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "email": "Email",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "registerationDate": "Registeration Date",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "modifiedBy": "Modified By",
+      "course": "Course"
+    }
+  }
+}

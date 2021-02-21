@@ -1,0 +1,42 @@
+{
+  "itcenterbazaApp": {
+    "teacher": {
+      "home": {
+        "title": "Teachers",
+        "createLabel": "Yangi Teacher qo`shish",
+        "createOrEditLabel": "Teacherni tahrirlash",
+        "notFound": "No Teachers found"
+      },
+      "created": "Teacher {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Teacher saqlandi",
+      "deleted": "{{ param }}- Teacher o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Teacherni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Teacher"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "email": "Email",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "registerationDate": "Registeration Date",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "fullPhotoUrl": "Full Photo Url",
+      "active": "Active",
+      "key": "Key",
+      "about": "About",
+      "portfolia": "Portfolia",
+      "info": "Info",
+      "leaveDate": "Leave Date",
+      "isShowingHome": "Is Showing Home",
+      "image": "Image",
+      "modifiedBy": "Modified By",
+      "user": "User",
+      "skills": "Skills"
+    }
+  }
+}

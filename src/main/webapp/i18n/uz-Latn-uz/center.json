@@ -1,0 +1,28 @@
+{
+  "itcenterbazaApp": {
+    "center": {
+      "home": {
+        "title": "Centers",
+        "createLabel": "Yangi Center qo`shish",
+        "createOrEditLabel": "Centerni tahrirlash",
+        "notFound": "No Centers found"
+      },
+      "created": "Center {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Center saqlandi",
+      "deleted": "{{ param }}- Center o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Centerni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Center"
+      },
+      "title": "Title",
+      "info": "Info",
+      "startDate": "Start Date",
+      "googleMapUrl": "Google Map Url",
+      "modifiedBy": "Modified By",
+      "regions": "Regions",
+      "manager": "Manager"
+    }
+  }
+}

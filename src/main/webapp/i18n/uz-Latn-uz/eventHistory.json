@@ -1,0 +1,27 @@
+{
+  "itcenterbazaApp": {
+    "eventHistory": {
+      "home": {
+        "title": "Event Histories",
+        "createLabel": "Yangi Event History qo`shish",
+        "createOrEditLabel": "Event Historyni tahrirlash",
+        "notFound": "No Event Histories found"
+      },
+      "created": "Event History {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Event History saqlandi",
+      "deleted": "{{ param }}- Event History o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Event Historyni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Event History"
+      },
+      "type": "Type",
+      "text": "Text",
+      "time": "Time",
+      "center": "Center",
+      "user": "User",
+      "openedUser": "Opened User"
+    }
+  }
+}

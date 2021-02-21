@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="registered">
+            <h2><span jhiTranslate="itcenterbazaApp.registered.detail.title">Registered</span> {{ registered.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="itcenterbazaApp.registered.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{ registered.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ registered.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.middleName">Middle Name</span></dt>
+                <dd>
+                    <span>{{ registered.middleName }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.email">Email</span></dt>
+                <dd>
+                    <span>{{ registered.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.dateOfBirth">Date Of Birth</span></dt>
+                <dd>
+                    <span>{{ registered.dateOfBirth }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.gender">Gender</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'itcenterbazaApp.Gender.' + registered.gender }}">{{ registered.gender }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.registerationDate">Registeration Date</span></dt>
+                <dd>
+                    <span>{{ registered.registerationDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ registered.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.mobile">Mobile</span></dt>
+                <dd>
+                    <span>{{ registered.mobile }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.modifiedBy">Modified By</span></dt>
+                <dd>
+                    {{ registered.modifiedById }}
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.registered.course">Course</span></dt>
+                <dd>
+                    <div *ngIf="registered.courseId">
+                        <a [routerLink]="['/course', registered.courseId, 'view']">{{ registered.courseId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/registered', registered.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

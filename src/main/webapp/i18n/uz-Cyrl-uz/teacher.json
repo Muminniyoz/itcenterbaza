@@ -1,0 +1,42 @@
+{
+  "itcenterbazaApp": {
+    "teacher": {
+      "home": {
+        "title": "Teachers",
+        "createLabel": "Янги Teacher қўшиш",
+        "createOrEditLabel": "Teacherни таҳрирлаш",
+        "notFound": "No Teachers found"
+      },
+      "created": "Teacher {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Teacher сақланди.",
+      "deleted": "{{ param }}- Teacher ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Teacherни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Teacher"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "email": "Email",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "registerationDate": "Registeration Date",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "fullPhotoUrl": "Full Photo Url",
+      "active": "Active",
+      "key": "Key",
+      "about": "About",
+      "portfolia": "Portfolia",
+      "info": "Info",
+      "leaveDate": "Leave Date",
+      "isShowingHome": "Is Showing Home",
+      "image": "Image",
+      "modifiedBy": "Modified By",
+      "user": "User",
+      "skills": "Skills"
+    }
+  }
+}

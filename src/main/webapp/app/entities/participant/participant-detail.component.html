@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="participant">
+            <h2><span jhiTranslate="itcenterbazaApp.participant.detail.title">Participant</span> {{ participant.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="itcenterbazaApp.participant.startingDate">Starting Date</span></dt>
+                <dd>
+                    <span>{{ participant.startingDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.participant.active">Active</span></dt>
+                <dd>
+                    <span>{{ participant.active }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.participant.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'itcenterbazaApp.ParticipantStatus.' + participant.status }}">{{ participant.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.participant.contractNumber">Contract Number</span></dt>
+                <dd>
+                    <span>{{ participant.contractNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.participant.student">Student</span></dt>
+                <dd>
+                    <div *ngIf="participant.studentId">
+                        <a [routerLink]="['/student', participant.studentId, 'view']">{{ participant.studentId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.participant.course">Course</span></dt>
+                <dd>
+                    <div *ngIf="participant.courseId">
+                        <a [routerLink]="['/course', participant.courseId, 'view']">{{ participant.courseId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/participant', participant.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

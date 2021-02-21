@@ -1,0 +1,25 @@
+{
+  "itcenterbazaApp": {
+    "systemConfig": {
+      "home": {
+        "title": "System Configs",
+        "createLabel": "Создать новый System Config",
+        "createOrEditLabel": "Создать или отредактировать System Config",
+        "notFound": "No System Configs found"
+      },
+      "created": "Новый System Config создан с идентификатором {{ param }}",
+      "updated": "System Config обновлен с идентификатором {{ param }}",
+      "deleted": "System Config удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить System Config {{ id }}?"
+      },
+      "detail": {
+        "title": "System Config"
+      },
+      "key": "Key",
+      "value": "Value",
+      "note": "Note",
+      "enabled": "Enabled"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-course-heading" jhiTranslate="itcenterbazaApp.course.home.createOrEditLabel">Create or edit a Course</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.price" for="field_price">Price</label>
+                    <input type="number" class="form-control" name="price" id="field_price"
+                           formControlName="price"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.startDate" for="field_startDate">Start Date</label>
+                    <div class="input-group">
+                        <input id="field_startDate" type="text" class="form-control" name="startDate" ngbDatepicker #startDateDp="ngbDatepicker" formControlName="startDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="startDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="ACTIVE">{{ 'itcenterbazaApp.CourseStatus.ACTIVE' | translate }}</option>
+                        <option value="PLANNING">{{ 'itcenterbazaApp.CourseStatus.PLANNING' | translate }}</option>
+                        <option value="FINISHED">{{ 'itcenterbazaApp.CourseStatus.FINISHED' | translate }}</option>
+                        <option value="CANCELED">{{ 'itcenterbazaApp.CourseStatus.CANCELED' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.duration" for="field_duration">Duration</label>
+                    <input type="number" class="form-control" name="duration" id="field_duration"
+                           formControlName="duration"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.planFile" for="field_planFile">Plan File</label>
+                    <div>
+                        <div *ngIf="editForm.get('planFile')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('planFileContentType')!.value, editForm.get('planFile')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('planFileContentType')!.value }}, {{ byteSize(editForm.get('planFile')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({planFile: null});editForm.patchValue({planFileContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_planFile" (change)="setFileData($event, 'planFile', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="planFile" id="field_planFile"
+                           formControlName="planFile"/>
+                    <input type="hidden" class="form-control" name="planFileContentType" id="field_planFileContentType"
+                           formControlName="planFileContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.teacher" for="field_teacher">Teacher</label>
+                    <select class="form-control" id="field_teacher" name="teacher" formControlName="teacherId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="teacherOption.id" *ngFor="let teacherOption of teachers; trackBy: trackById">{{ teacherOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.center" for="field_center">Center</label>
+                    <select class="form-control" id="field_center" name="center" formControlName="centerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="centerOption.id" *ngFor="let centerOption of centers; trackBy: trackById">{{ centerOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.course.skill" for="field_skill">Skill</label>
+                    <select class="form-control" id="field_skill" name="skill" formControlName="skillId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="skillOption.id" *ngFor="let skillOption of skills; trackBy: trackById">{{ skillOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

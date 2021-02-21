@@ -1,0 +1,27 @@
+{
+  "itcenterbazaApp": {
+    "participant": {
+      "home": {
+        "title": "Participants",
+        "createLabel": "Yangi Participant qo`shish",
+        "createOrEditLabel": "Participantni tahrirlash",
+        "notFound": "No Participants found"
+      },
+      "created": "Participant {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Participant saqlandi",
+      "deleted": "{{ param }}- Participant o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Participantni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Participant"
+      },
+      "startingDate": "Starting Date",
+      "active": "Active",
+      "status": "Status",
+      "contractNumber": "Contract Number",
+      "student": "Student",
+      "course": "Course"
+    }
+  }
+}

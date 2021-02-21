@@ -1,0 +1,11 @@
+{
+  "itcenterbazaApp": {
+    "ParticipantStatus": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "LEAVE": "LEAVE",
+      "REMOVED": "REMOVED",
+      "COPLETED": "COPLETED"
+    }
+  }
+}

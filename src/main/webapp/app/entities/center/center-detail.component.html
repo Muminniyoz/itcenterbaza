@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="center">
+            <h2><span jhiTranslate="itcenterbazaApp.center.detail.title">Center</span> {{ center.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="itcenterbazaApp.center.title">Title</span></dt>
+                <dd>
+                    <span>{{ center.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.center.info">Info</span></dt>
+                <dd>
+                    <span>{{ center.info }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.center.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ center.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.center.googleMapUrl">Google Map Url</span></dt>
+                <dd>
+                    <span>{{ center.googleMapUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.center.modifiedBy">Modified By</span></dt>
+                <dd>
+                    {{ center.modifiedById }}
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.center.regions">Regions</span></dt>
+                <dd>
+                    <div *ngIf="center.regionsId">
+                        <a [routerLink]="['/regions', center.regionsId, 'view']">{{ center.regionsId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.center.manager">Manager</span></dt>
+                <dd>
+                    {{ center.managerId }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/center', center.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

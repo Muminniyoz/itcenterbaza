@@ -1,0 +1,25 @@
+{
+  "itcenterbazaApp": {
+    "regions": {
+      "home": {
+        "title": "Regions",
+        "createLabel": "Yangi Regions qo`shish",
+        "createOrEditLabel": "Regionsni tahrirlash",
+        "notFound": "No Regions found"
+      },
+      "created": "Regions {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Regions saqlandi",
+      "deleted": "{{ param }}- Regions o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Regionsni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Regions"
+      },
+      "title": "Title",
+      "info": "Info",
+      "googleUrl": "Google Url",
+      "director": "Director"
+    }
+  }
+}

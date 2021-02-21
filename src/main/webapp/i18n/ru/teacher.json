@@ -1,0 +1,42 @@
+{
+  "itcenterbazaApp": {
+    "teacher": {
+      "home": {
+        "title": "Teachers",
+        "createLabel": "Создать новый Teacher",
+        "createOrEditLabel": "Создать или отредактировать Teacher",
+        "notFound": "No Teachers found"
+      },
+      "created": "Новый Teacher создан с идентификатором {{ param }}",
+      "updated": "Teacher обновлен с идентификатором {{ param }}",
+      "deleted": "Teacher удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Teacher {{ id }}?"
+      },
+      "detail": {
+        "title": "Teacher"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "email": "Email",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "registerationDate": "Registeration Date",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "fullPhotoUrl": "Full Photo Url",
+      "active": "Active",
+      "key": "Key",
+      "about": "About",
+      "portfolia": "Portfolia",
+      "info": "Info",
+      "leaveDate": "Leave Date",
+      "isShowingHome": "Is Showing Home",
+      "image": "Image",
+      "modifiedBy": "Modified By",
+      "user": "User",
+      "skills": "Skills"
+    }
+  }
+}

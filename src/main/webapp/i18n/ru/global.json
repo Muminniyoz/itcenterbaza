@@ -7,6 +7,19 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Сущности",
+        "regions": "Regions",
+        "center": "Center",
+        "skill": "Skill",
+        "teacher": "Teacher",
+        "course": "Course",
+        "registered": "Registered",
+        "student": "Student",
+        "participant": "Participant",
+        "paymentMethodConfig": "Payment Method Config",
+        "paymentMethod": "Payment Method",
+        "systemConfig": "System Config",
+        "payment": "Payment",
+        "eventHistory": "Event History",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

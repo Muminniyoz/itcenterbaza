@@ -1,0 +1,34 @@
+{
+  "itcenterbazaApp": {
+    "student": {
+      "home": {
+        "title": "Students",
+        "createLabel": "Янги Student қўшиш",
+        "createOrEditLabel": "Studentни таҳрирлаш",
+        "notFound": "No Students found"
+      },
+      "created": "Student {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Student сақланди.",
+      "deleted": "{{ param }}- Student ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Studentни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Student"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "email": "Email",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "registerationDate": "Registeration Date",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "thumbnailPhotoUrl": "Thumbnail Photo Url",
+      "fullPhotoUrl": "Full Photo Url",
+      "idNumber": "Id Number",
+      "modifiedBy": "Modified By"
+    }
+  }
+}

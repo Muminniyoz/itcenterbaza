@@ -47,6 +47,24 @@ public class CacheConfiguration {
             createCache(cm, uz.itcenterbaza.domain.User.class.getName());
             createCache(cm, uz.itcenterbaza.domain.Authority.class.getName());
             createCache(cm, uz.itcenterbaza.domain.User.class.getName() + ".authorities");
+            createCache(cm, uz.itcenterbaza.domain.Regions.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.Center.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.Skill.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.Skill.class.getName() + ".teachers");
+            createCache(cm, uz.itcenterbaza.domain.Teacher.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.Teacher.class.getName() + ".skills");
+            createCache(cm, uz.itcenterbaza.domain.Course.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.Course.class.getName() + ".registereds");
+            createCache(cm, uz.itcenterbaza.domain.Registered.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.Student.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.Participant.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.PaymentMethodConfig.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.PaymentMethod.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.PaymentMethod.class.getName() + ".confs");
+            createCache(cm, uz.itcenterbaza.domain.SystemConfig.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.Payment.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.EventHistory.class.getName());
+            createCache(cm, uz.itcenterbaza.domain.EventHistory.class.getName() + ".openedUsers");
             // jhipster-needle-ehcache-add-entry
         };
     }

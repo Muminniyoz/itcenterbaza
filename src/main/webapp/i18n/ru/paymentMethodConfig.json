@@ -1,0 +1,26 @@
+{
+  "itcenterbazaApp": {
+    "paymentMethodConfig": {
+      "home": {
+        "title": "Payment Method Configs",
+        "createLabel": "Создать новый Payment Method Config",
+        "createOrEditLabel": "Создать или отредактировать Payment Method Config",
+        "notFound": "No Payment Method Configs found"
+      },
+      "created": "Новый Payment Method Config создан с идентификатором {{ param }}",
+      "updated": "Payment Method Config обновлен с идентификатором {{ param }}",
+      "deleted": "Payment Method Config удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Payment Method Config {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Method Config"
+      },
+      "key": "Key",
+      "value": "Value",
+      "note": "Note",
+      "enabled": "Enabled",
+      "method": "Method"
+    }
+  }
+}

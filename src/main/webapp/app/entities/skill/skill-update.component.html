@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-skill-heading" jhiTranslate="itcenterbazaApp.skill.home.createOrEditLabel">Create or edit a Skill</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.skill.titleUz" for="field_titleUz">Title Uz</label>
+                    <input type="text" class="form-control" name="titleUz" id="field_titleUz"
+                           formControlName="titleUz"/>
+                    <div *ngIf="editForm.get('titleUz')!.invalid && (editForm.get('titleUz')!.dirty || editForm.get('titleUz')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('titleUz')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.skill.titleRu" for="field_titleRu">Title Ru</label>
+                    <input type="text" class="form-control" name="titleRu" id="field_titleRu"
+                           formControlName="titleRu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.skill.titleEn" for="field_titleEn">Title En</label>
+                    <input type="text" class="form-control" name="titleEn" id="field_titleEn"
+                           formControlName="titleEn"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.skill.about" for="field_about">About</label>
+                    <textarea class="form-control" name="about" id="field_about"
+                              formControlName="about"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.skill.planFile" for="field_planFile">Plan File</label>
+                    <div>
+                        <div *ngIf="editForm.get('planFile')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('planFileContentType')!.value, editForm.get('planFile')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('planFileContentType')!.value }}, {{ byteSize(editForm.get('planFile')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({planFile: null});editForm.patchValue({planFileContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_planFile" (change)="setFileData($event, 'planFile', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="planFile" id="field_planFile"
+                           formControlName="planFile"/>
+                    <input type="hidden" class="form-control" name="planFileContentType" id="field_planFileContentType"
+                           formControlName="planFileContentType" />
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

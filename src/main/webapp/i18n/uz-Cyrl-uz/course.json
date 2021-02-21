@@ -1,0 +1,31 @@
+{
+  "itcenterbazaApp": {
+    "course": {
+      "home": {
+        "title": "Courses",
+        "createLabel": "Янги Course қўшиш",
+        "createOrEditLabel": "Courseни таҳрирлаш",
+        "notFound": "No Courses found"
+      },
+      "created": "Course {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Course сақланди.",
+      "deleted": "{{ param }}- Course ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Courseни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Course"
+      },
+      "title": "Title",
+      "price": "Price",
+      "startDate": "Start Date",
+      "status": "Status",
+      "duration": "Duration",
+      "planFile": "Plan File",
+      "registered": "Registered",
+      "teacher": "Teacher",
+      "center": "Center",
+      "skill": "Skill"
+    }
+  }
+}

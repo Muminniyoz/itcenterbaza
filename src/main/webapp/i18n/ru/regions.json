@@ -1,0 +1,25 @@
+{
+  "itcenterbazaApp": {
+    "regions": {
+      "home": {
+        "title": "Regions",
+        "createLabel": "Создать новый Regions",
+        "createOrEditLabel": "Создать или отредактировать Regions",
+        "notFound": "No Regions found"
+      },
+      "created": "Новый Regions создан с идентификатором {{ param }}",
+      "updated": "Regions обновлен с идентификатором {{ param }}",
+      "deleted": "Regions удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Regions {{ id }}?"
+      },
+      "detail": {
+        "title": "Regions"
+      },
+      "title": "Title",
+      "info": "Info",
+      "googleUrl": "Google Url",
+      "director": "Director"
+    }
+  }
+}

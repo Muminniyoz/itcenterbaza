@@ -1,0 +1,72 @@
+{
+  "name": "Payment",
+  "fields": [
+    {
+      "fieldName": "paymentDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "paymentProvider",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "paymentStatus",
+      "fieldType": "PaymentStatus",
+      "fieldValues": "PENDING,PAID,CANCELLED,REFUNDED,FAILED"
+    },
+    {
+      "fieldName": "curency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isEnough",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isConfirmed",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "modifiedBy",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "participant",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "student",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "paymentMethod",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "method",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210221050339",
+  "entityTableName": "payment",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

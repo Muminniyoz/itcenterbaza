@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-participant-heading" jhiTranslate="itcenterbazaApp.participant.home.createOrEditLabel">Create or edit a Participant</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.participant.startingDate" for="field_startingDate">Starting Date</label>
+                    <div class="input-group">
+                        <input id="field_startingDate" type="text" class="form-control" name="startingDate" ngbDatepicker #startingDateDp="ngbDatepicker" formControlName="startingDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="startingDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.participant.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.participant.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="ACTIVE">{{ 'itcenterbazaApp.ParticipantStatus.ACTIVE' | translate }}</option>
+                        <option value="LEAVE">{{ 'itcenterbazaApp.ParticipantStatus.LEAVE' | translate }}</option>
+                        <option value="REMOVED">{{ 'itcenterbazaApp.ParticipantStatus.REMOVED' | translate }}</option>
+                        <option value="COPLETED">{{ 'itcenterbazaApp.ParticipantStatus.COPLETED' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.participant.contractNumber" for="field_contractNumber">Contract Number</label>
+                    <input type="text" class="form-control" name="contractNumber" id="field_contractNumber"
+                           formControlName="contractNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.participant.student" for="field_student">Student</label>
+                    <select class="form-control" id="field_student" name="student" formControlName="studentId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="studentOption.id" *ngFor="let studentOption of students; trackBy: trackById">{{ studentOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.participant.course" for="field_course">Course</label>
+                    <select class="form-control" id="field_course" name="course" formControlName="courseId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="courseOption.id" *ngFor="let courseOption of courses; trackBy: trackById">{{ courseOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

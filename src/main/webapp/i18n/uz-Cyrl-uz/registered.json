@@ -1,0 +1,32 @@
+{
+  "itcenterbazaApp": {
+    "registered": {
+      "home": {
+        "title": "Registereds",
+        "createLabel": "Янги Registered қўшиш",
+        "createOrEditLabel": "Registeredни таҳрирлаш",
+        "notFound": "No Registereds found"
+      },
+      "created": "Registered {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Registered сақланди.",
+      "deleted": "{{ param }}- Registered ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Registeredни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Registered"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "email": "Email",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "registerationDate": "Registeration Date",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "modifiedBy": "Modified By",
+      "course": "Course"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="itcenterbazaApp.registered.home.title">Registereds</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-registered" [routerLink]="['/registered/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="itcenterbazaApp.registered.home.createLabel">
+            Create a new Registered
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="registereds?.length === 0">
+        <span jhiTranslate="itcenterbazaApp.registered.home.notFound">No registereds found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="registereds && registereds.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="firstName"><span jhiTranslate="itcenterbazaApp.registered.firstName">First Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lastName"><span jhiTranslate="itcenterbazaApp.registered.lastName">Last Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="middleName"><span jhiTranslate="itcenterbazaApp.registered.middleName">Middle Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="itcenterbazaApp.registered.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateOfBirth"><span jhiTranslate="itcenterbazaApp.registered.dateOfBirth">Date Of Birth</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="gender"><span jhiTranslate="itcenterbazaApp.registered.gender">Gender</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="registerationDate"><span jhiTranslate="itcenterbazaApp.registered.registerationDate">Registeration Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telephone"><span jhiTranslate="itcenterbazaApp.registered.telephone">Telephone</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mobile"><span jhiTranslate="itcenterbazaApp.registered.mobile">Mobile</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="modifiedById"><span jhiTranslate="itcenterbazaApp.registered.modifiedBy">Modified By</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="courseId"><span jhiTranslate="itcenterbazaApp.registered.course">Course</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let registered of registereds ;trackBy: trackId">
+                    <td><a [routerLink]="['/registered', registered.id, 'view']">{{ registered.id }}</a></td>
+                    <td>{{ registered.firstName }}</td>
+                    <td>{{ registered.lastName }}</td>
+                    <td>{{ registered.middleName }}</td>
+                    <td>{{ registered.email }}</td>
+                    <td>{{ registered.dateOfBirth | date:'mediumDate' }}</td>
+                    <td jhiTranslate="{{ 'itcenterbazaApp.Gender.' + registered.gender }}">{{ registered.gender }}</td>
+                    <td>{{ registered.registerationDate | date:'mediumDate' }}</td>
+                    <td>{{ registered.telephone }}</td>
+                    <td>{{ registered.mobile }}</td>
+                    <td>
+                        {{ registered.modifiedById }}
+                    </td>
+                    <td>
+                        <div *ngIf="registered.courseId">
+                            <a [routerLink]="['/course', registered.courseId , 'view']" >{{ registered.courseId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/registered', registered.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/registered', registered.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(registered)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

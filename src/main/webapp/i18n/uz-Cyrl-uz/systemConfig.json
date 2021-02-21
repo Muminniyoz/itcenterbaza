@@ -1,0 +1,25 @@
+{
+  "itcenterbazaApp": {
+    "systemConfig": {
+      "home": {
+        "title": "System Configs",
+        "createLabel": "Янги System Config қўшиш",
+        "createOrEditLabel": "System Configни таҳрирлаш",
+        "notFound": "No System Configs found"
+      },
+      "created": "System Config {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- System Config сақланди.",
+      "deleted": "{{ param }}- System Config ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- System Configни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "System Config"
+      },
+      "key": "Key",
+      "value": "Value",
+      "note": "Note",
+      "enabled": "Enabled"
+    }
+  }
+}

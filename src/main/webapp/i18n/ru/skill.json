@@ -1,0 +1,27 @@
+{
+  "itcenterbazaApp": {
+    "skill": {
+      "home": {
+        "title": "Skills",
+        "createLabel": "Создать новый Skill",
+        "createOrEditLabel": "Создать или отредактировать Skill",
+        "notFound": "No Skills found"
+      },
+      "created": "Новый Skill создан с идентификатором {{ param }}",
+      "updated": "Skill обновлен с идентификатором {{ param }}",
+      "deleted": "Skill удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Skill {{ id }}?"
+      },
+      "detail": {
+        "title": "Skill"
+      },
+      "titleUz": "Title Uz",
+      "titleRu": "Title Ru",
+      "titleEn": "Title En",
+      "about": "About",
+      "planFile": "Plan File",
+      "teacher": "Teacher"
+    }
+  }
+}

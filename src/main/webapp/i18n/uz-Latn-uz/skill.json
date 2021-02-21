@@ -1,0 +1,27 @@
+{
+  "itcenterbazaApp": {
+    "skill": {
+      "home": {
+        "title": "Skills",
+        "createLabel": "Yangi Skill qo`shish",
+        "createOrEditLabel": "Skillni tahrirlash",
+        "notFound": "No Skills found"
+      },
+      "created": "Skill {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Skill saqlandi",
+      "deleted": "{{ param }}- Skill o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Skillni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Skill"
+      },
+      "titleUz": "Title Uz",
+      "titleRu": "Title Ru",
+      "titleEn": "Title En",
+      "about": "About",
+      "planFile": "Plan File",
+      "teacher": "Teacher"
+    }
+  }
+}

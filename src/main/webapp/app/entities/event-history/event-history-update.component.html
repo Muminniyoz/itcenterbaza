@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-event-history-heading" jhiTranslate="itcenterbazaApp.eventHistory.home.createOrEditLabel">Create or edit a Event History</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.eventHistory.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="MESSAGE">{{ 'itcenterbazaApp.EventType.MESSAGE' | translate }}</option>
+                        <option value="ERROR">{{ 'itcenterbazaApp.EventType.ERROR' | translate }}</option>
+                        <option value="PAYMENT">{{ 'itcenterbazaApp.EventType.PAYMENT' | translate }}</option>
+                        <option value="LOGIN">{{ 'itcenterbazaApp.EventType.LOGIN' | translate }}</option>
+                        <option value="CREATE_COURSE">{{ 'itcenterbazaApp.EventType.CREATE_COURSE' | translate }}</option>
+                        <option value="PARTICIPANT">{{ 'itcenterbazaApp.EventType.PARTICIPANT' | translate }}</option>
+                        <option value="REGISTERED">{{ 'itcenterbazaApp.EventType.REGISTERED' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.eventHistory.text" for="field_text">Text</label>
+                    <input type="text" class="form-control" name="text" id="field_text"
+                           formControlName="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.eventHistory.time" for="field_time">Time</label>
+                    <div class="d-flex">
+                        <input id="field_time" type="datetime-local" class="form-control" name="time" formControlName="time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.eventHistory.center" for="field_center">Center</label>
+                    <select class="form-control" id="field_center" name="center" formControlName="centerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="centerOption.id" *ngFor="let centerOption of centers; trackBy: trackById">{{ centerOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.eventHistory.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="userId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="itcenterbazaApp.eventHistory.openedUser" for="field_openedUsers">Opened User</label>
+                    <select class="form-control" id="field_openedUsers" multiple name="openedUsers" formControlName="openedUsers">
+                        <option [ngValue]="getSelected(editForm.get('openedUsers')!.value, userOption)" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

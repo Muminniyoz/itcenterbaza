@@ -1,0 +1,27 @@
+{
+  "itcenterbazaApp": {
+    "eventHistory": {
+      "home": {
+        "title": "Event Histories",
+        "createLabel": "Янги Event History қўшиш",
+        "createOrEditLabel": "Event Historyни таҳрирлаш",
+        "notFound": "No Event Histories found"
+      },
+      "created": "Event History {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Event History сақланди.",
+      "deleted": "{{ param }}- Event History ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Event Historyни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Event History"
+      },
+      "type": "Type",
+      "text": "Text",
+      "time": "Time",
+      "center": "Center",
+      "user": "User",
+      "openedUser": "Opened User"
+    }
+  }
+}

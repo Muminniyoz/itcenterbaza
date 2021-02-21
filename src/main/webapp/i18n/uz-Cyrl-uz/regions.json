@@ -1,0 +1,25 @@
+{
+  "itcenterbazaApp": {
+    "regions": {
+      "home": {
+        "title": "Regions",
+        "createLabel": "Янги Regions қўшиш",
+        "createOrEditLabel": "Regionsни таҳрирлаш",
+        "notFound": "No Regions found"
+      },
+      "created": "Regions {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Regions сақланди.",
+      "deleted": "{{ param }}- Regions ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Regionsни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Regions"
+      },
+      "title": "Title",
+      "info": "Info",
+      "googleUrl": "Google Url",
+      "director": "Director"
+    }
+  }
+}

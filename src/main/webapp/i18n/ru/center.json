@@ -1,0 +1,28 @@
+{
+  "itcenterbazaApp": {
+    "center": {
+      "home": {
+        "title": "Centers",
+        "createLabel": "Создать новый Center",
+        "createOrEditLabel": "Создать или отредактировать Center",
+        "notFound": "No Centers found"
+      },
+      "created": "Новый Center создан с идентификатором {{ param }}",
+      "updated": "Center обновлен с идентификатором {{ param }}",
+      "deleted": "Center удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Center {{ id }}?"
+      },
+      "detail": {
+        "title": "Center"
+      },
+      "title": "Title",
+      "info": "Info",
+      "startDate": "Start Date",
+      "googleMapUrl": "Google Map Url",
+      "modifiedBy": "Modified By",
+      "regions": "Regions",
+      "manager": "Manager"
+    }
+  }
+}
