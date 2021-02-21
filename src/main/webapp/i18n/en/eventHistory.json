@@ -1,0 +1,27 @@
+{
+  "itcenterbazaApp": {
+    "eventHistory": {
+      "home": {
+        "title": "Event Histories",
+        "createLabel": "Create a new Event History",
+        "createOrEditLabel": "Create or edit a Event History",
+        "notFound": "No Event Histories found"
+      },
+      "created": "A new Event History is created with identifier {{ param }}",
+      "updated": "A Event History is updated with identifier {{ param }}",
+      "deleted": "A Event History is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Event History {{ id }}?"
+      },
+      "detail": {
+        "title": "Event History"
+      },
+      "type": "Type",
+      "text": "Text",
+      "time": "Time",
+      "center": "Center",
+      "user": "User",
+      "openedUser": "Opened User"
+    }
+  }
+}

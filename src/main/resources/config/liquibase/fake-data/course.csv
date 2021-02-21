@@ -1,0 +1,11 @@
+id;title;price;start_date;status;duration;plan_file;plan_file_content_type
+1;New Taiwan Dollar connecting Fiji Dollar;25860;2021-02-20;CANCELED;29406;../fake-data/blob/hipster.png;image/png
+2;yellow;40689;2021-02-21;ACTIVE;72720;../fake-data/blob/hipster.png;image/png
+3;bottom-line;92422;2021-02-20;PLANNING;87978;../fake-data/blob/hipster.png;image/png
+4;Tasty;8097;2021-02-20;FINISHED;22624;../fake-data/blob/hipster.png;image/png
+5;exuding Rubber Refined Frozen Shoes;19745;2021-02-20;FINISHED;22986;../fake-data/blob/hipster.png;image/png
+6;indexing;21780;2021-02-20;ACTIVE;8975;../fake-data/blob/hipster.png;image/png
+7;Concrete Corporate convergence;5375;2021-02-20;PLANNING;38144;../fake-data/blob/hipster.png;image/png
+8;Sleek Quality neural;2878;2021-02-21;ACTIVE;269;../fake-data/blob/hipster.png;image/png
+9;Stravenue Prairie;77263;2021-02-20;ACTIVE;34603;../fake-data/blob/hipster.png;image/png
+10;Turkey;63548;2021-02-20;ACTIVE;18703;../fake-data/blob/hipster.png;image/png

@@ -1,0 +1,25 @@
+{
+  "itcenterbazaApp": {
+    "paymentMethod": {
+      "home": {
+        "title": "Payment Methods",
+        "createLabel": "Янги Payment Method қўшиш",
+        "createOrEditLabel": "Payment Methodни таҳрирлаш",
+        "notFound": "No Payment Methods found"
+      },
+      "created": "Payment Method {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Payment Method сақланди.",
+      "deleted": "{{ param }}- Payment Method ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Payment Methodни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Payment Method"
+      },
+      "paymentMethod": "Payment Method",
+      "description": "Description",
+      "active": "Active",
+      "conf": "Conf"
+    }
+  }
+}

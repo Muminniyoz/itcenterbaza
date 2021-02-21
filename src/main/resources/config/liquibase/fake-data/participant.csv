@@ -1,0 +1,11 @@
+id;starting_date;active;status;contract_number
+1;2021-02-20;true;COPLETED;Personal Loan Account
+2;2021-02-20;false;ACTIVE;payment
+3;2021-02-21;true;LEAVE;Fresh uniform online
+4;2021-02-20;false;ACTIVE;Avon
+5;2021-02-21;false;COPLETED;black Buckinghamshire
+6;2021-02-21;true;REMOVED;reintermediate Ford
+7;2021-02-20;true;REMOVED;Djibouti Franc primary
+8;2021-02-21;true;COPLETED;XSS
+9;2021-02-20;false;REMOVED;Soft Ways Assistant
+10;2021-02-21;true;REMOVED;benchmark

@@ -1,0 +1,210 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-teacher-heading" jhiTranslate="itcenterbazaApp.teacher.home.createOrEditLabel">Create or edit a Teacher</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.firstName" for="field_firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                           formControlName="firstName"/>
+                    <div *ngIf="editForm.get('firstName')!.invalid && (editForm.get('firstName')!.dirty || editForm.get('firstName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('firstName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.lastName" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                           formControlName="lastName"/>
+                    <div *ngIf="editForm.get('lastName')!.invalid && (editForm.get('lastName')!.dirty || editForm.get('lastName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lastName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.middleName" for="field_middleName">Middle Name</label>
+                    <input type="text" class="form-control" name="middleName" id="field_middleName"
+                           formControlName="middleName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.dateOfBirth" for="field_dateOfBirth">Date Of Birth</label>
+                    <div class="input-group">
+                        <input id="field_dateOfBirth" type="text" class="form-control" name="dateOfBirth" ngbDatepicker #dateOfBirthDp="ngbDatepicker" formControlName="dateOfBirth"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateOfBirthDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.gender" for="field_gender">Gender</label>
+                    <select class="form-control" name="gender" formControlName="gender" id="field_gender">
+                        <option value="MALE">{{ 'itcenterbazaApp.Gender.MALE' | translate }}</option>
+                        <option value="FEMALE">{{ 'itcenterbazaApp.Gender.FEMALE' | translate }}</option>
+                        <option value="OTHER">{{ 'itcenterbazaApp.Gender.OTHER' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.registerationDate" for="field_registerationDate">Registeration Date</label>
+                    <div class="input-group">
+                        <input id="field_registerationDate" type="text" class="form-control" name="registerationDate" ngbDatepicker #registerationDateDp="ngbDatepicker" formControlName="registerationDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="registerationDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.mobile" for="field_mobile">Mobile</label>
+                    <input type="text" class="form-control" name="mobile" id="field_mobile"
+                           formControlName="mobile"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.fullPhotoUrl" for="field_fullPhotoUrl">Full Photo Url</label>
+                    <input type="text" class="form-control" name="fullPhotoUrl" id="field_fullPhotoUrl"
+                           formControlName="fullPhotoUrl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.key" for="field_key">Key</label>
+                    <input type="text" class="form-control" name="key" id="field_key"
+                           formControlName="key"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.about" for="field_about">About</label>
+                    <textarea class="form-control" name="about" id="field_about"
+                              formControlName="about"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.portfolia" for="field_portfolia">Portfolia</label>
+                    <textarea class="form-control" name="portfolia" id="field_portfolia"
+                              formControlName="portfolia"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.info" for="field_info">Info</label>
+                    <div>
+                        <div *ngIf="editForm.get('info')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('infoContentType')!.value, editForm.get('info')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('infoContentType')!.value }}, {{ byteSize(editForm.get('info')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({info: null});editForm.patchValue({infoContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_info" (change)="setFileData($event, 'info', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="info" id="field_info"
+                           formControlName="info"/>
+                    <input type="hidden" class="form-control" name="infoContentType" id="field_infoContentType"
+                           formControlName="infoContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.leaveDate" for="field_leaveDate">Leave Date</label>
+                    <div class="input-group">
+                        <input id="field_leaveDate" type="text" class="form-control" name="leaveDate" ngbDatepicker #leaveDateDp="ngbDatepicker" formControlName="leaveDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="leaveDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.isShowingHome" for="field_isShowingHome">Is Showing Home</label>
+                    <input type="checkbox" class="form-control" name="isShowingHome" id="field_isShowingHome"
+                           formControlName="isShowingHome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.image" for="field_image">Image</label>
+                    <div>
+                        <div *ngIf="editForm.get('image')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('imageContentType')!.value, editForm.get('image')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('imageContentType')!.value }}, {{ byteSize(editForm.get('image')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({image: null});editForm.patchValue({imageContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image" (change)="setFileData($event, 'image', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image" id="field_image"
+                           formControlName="image"/>
+                    <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                           formControlName="imageContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <select class="form-control" id="field_modifiedBy" name="modifiedBy" formControlName="modifiedById">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.teacher.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="userId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="itcenterbazaApp.teacher.skills" for="field_skills">Skills</label>
+                    <select class="form-control" id="field_skills" multiple name="skills" formControlName="skills">
+                        <option [ngValue]="getSelected(editForm.get('skills')!.value, skillOption)" *ngFor="let skillOption of skills; trackBy: trackById">{{ skillOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

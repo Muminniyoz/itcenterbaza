@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="regions">
+            <h2><span jhiTranslate="itcenterbazaApp.regions.detail.title">Regions</span> {{ regions.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="itcenterbazaApp.regions.title">Title</span></dt>
+                <dd>
+                    <span>{{ regions.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.regions.info">Info</span></dt>
+                <dd>
+                    <span>{{ regions.info }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.regions.googleUrl">Google Url</span></dt>
+                <dd>
+                    <span>{{ regions.googleUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.regions.director">Director</span></dt>
+                <dd>
+                    {{ regions.directorId }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/regions', regions.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

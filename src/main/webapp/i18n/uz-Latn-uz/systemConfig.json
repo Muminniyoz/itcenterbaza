@@ -1,0 +1,25 @@
+{
+  "itcenterbazaApp": {
+    "systemConfig": {
+      "home": {
+        "title": "System Configs",
+        "createLabel": "Yangi System Config qo`shish",
+        "createOrEditLabel": "System Configni tahrirlash",
+        "notFound": "No System Configs found"
+      },
+      "created": "System Config {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- System Config saqlandi",
+      "deleted": "{{ param }}- System Config o`chirildi",
+      "delete": {
+        "question": "{{ id }}- System Configni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "System Config"
+      },
+      "key": "Key",
+      "value": "Value",
+      "note": "Note",
+      "enabled": "Enabled"
+    }
+  }
+}

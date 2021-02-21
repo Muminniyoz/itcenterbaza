@@ -1,0 +1,15 @@
+export const enum EventType {
+  MESSAGE = 'MESSAGE',
+
+  ERROR = 'ERROR',
+
+  PAYMENT = 'PAYMENT',
+
+  LOGIN = 'LOGIN',
+
+  CREATE_COURSE = 'CREATE_COURSE',
+
+  PARTICIPANT = 'PARTICIPANT',
+
+  REGISTERED = 'REGISTERED',
+}

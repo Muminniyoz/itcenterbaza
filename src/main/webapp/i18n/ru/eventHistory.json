@@ -1,0 +1,27 @@
+{
+  "itcenterbazaApp": {
+    "eventHistory": {
+      "home": {
+        "title": "Event Histories",
+        "createLabel": "Создать новый Event History",
+        "createOrEditLabel": "Создать или отредактировать Event History",
+        "notFound": "No Event Histories found"
+      },
+      "created": "Новый Event History создан с идентификатором {{ param }}",
+      "updated": "Event History обновлен с идентификатором {{ param }}",
+      "deleted": "Event History удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Event History {{ id }}?"
+      },
+      "detail": {
+        "title": "Event History"
+      },
+      "type": "Type",
+      "text": "Text",
+      "time": "Time",
+      "center": "Center",
+      "user": "User",
+      "openedUser": "Opened User"
+    }
+  }
+}

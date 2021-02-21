@@ -1,0 +1,37 @@
+{
+  "name": "PaymentMethod",
+  "fields": [
+    {
+      "fieldName": "paymentMethod",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "paymentMethodConfig",
+      "otherEntityRelationshipName": "method",
+      "relationshipName": "conf"
+    }
+  ],
+  "changelogDate": "20210221050139",
+  "entityTableName": "payment_method",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

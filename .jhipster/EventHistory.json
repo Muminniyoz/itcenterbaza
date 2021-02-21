@@ -1,0 +1,53 @@
+{
+  "name": "EventHistory",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "EventType",
+      "fieldValues": "MESSAGE,ERROR,PAYMENT,LOGIN,CREATE_COURSE,PARTICIPANT,REGISTERED"
+    },
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "center",
+      "otherEntityRelationshipName": "eventHistory",
+      "relationshipName": "center",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "eventHistory",
+      "relationshipName": "user",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "openedEvent",
+      "relationshipName": "openedUser",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210221050439",
+  "entityTableName": "event_history",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

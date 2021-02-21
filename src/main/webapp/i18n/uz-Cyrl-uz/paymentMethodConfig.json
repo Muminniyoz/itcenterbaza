@@ -1,0 +1,26 @@
+{
+  "itcenterbazaApp": {
+    "paymentMethodConfig": {
+      "home": {
+        "title": "Payment Method Configs",
+        "createLabel": "Янги Payment Method Config қўшиш",
+        "createOrEditLabel": "Payment Method Configни таҳрирлаш",
+        "notFound": "No Payment Method Configs found"
+      },
+      "created": "Payment Method Config {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Payment Method Config сақланди.",
+      "deleted": "{{ param }}- Payment Method Config ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Payment Method Configни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Payment Method Config"
+      },
+      "key": "Key",
+      "value": "Value",
+      "note": "Note",
+      "enabled": "Enabled",
+      "method": "Method"
+    }
+  }
+}

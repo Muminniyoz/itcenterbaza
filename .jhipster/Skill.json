@@ -1,0 +1,49 @@
+{
+  "name": "Skill",
+  "fields": [
+    {
+      "fieldName": "titleUz",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "titleRu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "titleEn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "about",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "planFile",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "skills",
+      "relationshipName": "teacher",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210221045439",
+  "entityTableName": "skill",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

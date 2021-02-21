@@ -1,0 +1,32 @@
+{
+  "itcenterbazaApp": {
+    "payment": {
+      "home": {
+        "title": "Payments",
+        "createLabel": "Янги Payment қўшиш",
+        "createOrEditLabel": "Paymentни таҳрирлаш",
+        "notFound": "No Payments found"
+      },
+      "created": "Payment {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Payment сақланди.",
+      "deleted": "{{ param }}- Payment ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Paymentни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Payment"
+      },
+      "paymentDate": "Payment Date",
+      "paymentProvider": "Payment Provider",
+      "amount": "Amount",
+      "paymentStatus": "Payment Status",
+      "curency": "Curency",
+      "customerName": "Customer Name",
+      "isEnough": "Is Enough",
+      "isConfirmed": "Is Confirmed",
+      "modifiedBy": "Modified By",
+      "student": "Student",
+      "method": "Method"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "itcenterbazaApp": {
+    "paymentMethod": {
+      "home": {
+        "title": "Payment Methods",
+        "createLabel": "Создать новый Payment Method",
+        "createOrEditLabel": "Создать или отредактировать Payment Method",
+        "notFound": "No Payment Methods found"
+      },
+      "created": "Новый Payment Method создан с идентификатором {{ param }}",
+      "updated": "Payment Method обновлен с идентификатором {{ param }}",
+      "deleted": "Payment Method удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Payment Method {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Method"
+      },
+      "paymentMethod": "Payment Method",
+      "description": "Description",
+      "active": "Active",
+      "conf": "Conf"
+    }
+  }
+}

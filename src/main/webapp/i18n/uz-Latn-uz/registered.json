@@ -1,0 +1,32 @@
+{
+  "itcenterbazaApp": {
+    "registered": {
+      "home": {
+        "title": "Registereds",
+        "createLabel": "Yangi Registered qo`shish",
+        "createOrEditLabel": "Registeredni tahrirlash",
+        "notFound": "No Registereds found"
+      },
+      "created": "Registered {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Registered saqlandi",
+      "deleted": "{{ param }}- Registered o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Registeredni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Registered"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "email": "Email",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "registerationDate": "Registeration Date",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "modifiedBy": "Modified By",
+      "course": "Course"
+    }
+  }
+}

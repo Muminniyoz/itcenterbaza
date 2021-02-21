@@ -1,0 +1,118 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="teacher">
+            <h2><span jhiTranslate="itcenterbazaApp.teacher.detail.title">Teacher</span> {{ teacher.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{ teacher.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ teacher.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.middleName">Middle Name</span></dt>
+                <dd>
+                    <span>{{ teacher.middleName }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.email">Email</span></dt>
+                <dd>
+                    <span>{{ teacher.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.dateOfBirth">Date Of Birth</span></dt>
+                <dd>
+                    <span>{{ teacher.dateOfBirth }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.gender">Gender</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'itcenterbazaApp.Gender.' + teacher.gender }}">{{ teacher.gender }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.registerationDate">Registeration Date</span></dt>
+                <dd>
+                    <span>{{ teacher.registerationDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ teacher.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.mobile">Mobile</span></dt>
+                <dd>
+                    <span>{{ teacher.mobile }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.fullPhotoUrl">Full Photo Url</span></dt>
+                <dd>
+                    <span>{{ teacher.fullPhotoUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.active">Active</span></dt>
+                <dd>
+                    <span>{{ teacher.active }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.key">Key</span></dt>
+                <dd>
+                    <span>{{ teacher.key }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.about">About</span></dt>
+                <dd>
+                    <span>{{ teacher.about }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.portfolia">Portfolia</span></dt>
+                <dd>
+                    <span>{{ teacher.portfolia }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.info">Info</span></dt>
+                <dd>
+                    <div *ngIf="teacher.info">
+                        <a (click)="openFile(teacher.infoContentType, teacher.info)" jhiTranslate="entity.action.open">open</a>
+                        {{ teacher.infoContentType }}, {{ byteSize(teacher.info) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.leaveDate">Leave Date</span></dt>
+                <dd>
+                    <span>{{ teacher.leaveDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.isShowingHome">Is Showing Home</span></dt>
+                <dd>
+                    <span>{{ teacher.isShowingHome }}</span>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="teacher.image">
+                        <a (click)="openFile(teacher.imageContentType, teacher.image)" jhiTranslate="entity.action.open">open</a>
+                        {{ teacher.imageContentType }}, {{ byteSize(teacher.image) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.modifiedBy">Modified By</span></dt>
+                <dd>
+                    {{ teacher.modifiedById }}
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.user">User</span></dt>
+                <dd>
+                    {{ teacher.userId }}
+                </dd>
+                <dt><span jhiTranslate="itcenterbazaApp.teacher.skills">Skills</span></dt>
+                <dd>
+                    <span *ngFor="let skills of teacher.skills; let last = last">
+                        <a [routerLink]="['/skill', skills?.id, 'view']">{{ skills.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/teacher', teacher.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

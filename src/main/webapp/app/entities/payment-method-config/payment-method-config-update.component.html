@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-payment-method-config-heading" jhiTranslate="itcenterbazaApp.paymentMethodConfig.home.createOrEditLabel">Create or edit a Payment Method Config</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.paymentMethodConfig.key" for="field_key">Key</label>
+                    <input type="text" class="form-control" name="key" id="field_key"
+                           formControlName="key"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.paymentMethodConfig.value" for="field_value">Value</label>
+                    <input type="text" class="form-control" name="value" id="field_value"
+                           formControlName="value"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.paymentMethodConfig.note" for="field_note">Note</label>
+                    <input type="text" class="form-control" name="note" id="field_note"
+                           formControlName="note"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.paymentMethodConfig.enabled" for="field_enabled">Enabled</label>
+                    <input type="checkbox" class="form-control" name="enabled" id="field_enabled"
+                           formControlName="enabled"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.paymentMethodConfig.method" for="field_method">Method</label>
+                    <select class="form-control" id="field_method" name="method" formControlName="methodId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="paymentMethodOption.id" *ngFor="let paymentMethodOption of paymentmethods; trackBy: trackById">{{ paymentMethodOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

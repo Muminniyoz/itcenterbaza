@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="itcenterbazaApp.course.home.title">Courses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-course" [routerLink]="['/course/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="itcenterbazaApp.course.home.createLabel">
+            Create a new Course
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="courses?.length === 0">
+        <span jhiTranslate="itcenterbazaApp.course.home.notFound">No courses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="courses && courses.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="title"><span jhiTranslate="itcenterbazaApp.course.title">Title</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="price"><span jhiTranslate="itcenterbazaApp.course.price">Price</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="startDate"><span jhiTranslate="itcenterbazaApp.course.startDate">Start Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="status"><span jhiTranslate="itcenterbazaApp.course.status">Status</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="duration"><span jhiTranslate="itcenterbazaApp.course.duration">Duration</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="planFile"><span jhiTranslate="itcenterbazaApp.course.planFile">Plan File</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="teacherId"><span jhiTranslate="itcenterbazaApp.course.teacher">Teacher</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="centerId"><span jhiTranslate="itcenterbazaApp.course.center">Center</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="skillId"><span jhiTranslate="itcenterbazaApp.course.skill">Skill</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let course of courses ;trackBy: trackId">
+                    <td><a [routerLink]="['/course', course.id, 'view']">{{ course.id }}</a></td>
+                    <td>{{ course.title }}</td>
+                    <td>{{ course.price }}</td>
+                    <td>{{ course.startDate | date:'mediumDate' }}</td>
+                    <td jhiTranslate="{{ 'itcenterbazaApp.CourseStatus.' + course.status }}">{{ course.status }}</td>
+                    <td>{{ course.duration }}</td>
+                    <td>
+                        <a *ngIf="course.planFile" (click)="openFile(course.planFileContentType, course.planFile)" jhiTranslate="entity.action.open">open</a>
+                        <span *ngIf="course.planFile">{{ course.planFileContentType }}, {{ byteSize(course.planFile) }}</span>
+                    </td>
+                    <td>
+                        <div *ngIf="course.teacherId">
+                            <a [routerLink]="['/teacher', course.teacherId , 'view']" >{{ course.teacherId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="course.centerId">
+                            <a [routerLink]="['/center', course.centerId , 'view']" >{{ course.centerId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="course.skillId">
+                            <a [routerLink]="['/skill', course.skillId , 'view']" >{{ course.skillId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/course', course.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/course', course.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(course)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

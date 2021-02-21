@@ -1,0 +1,71 @@
+{
+  "name": "Course",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "CourseStatus",
+      "fieldValues": "ACTIVE,PLANNING,FINISHED,CANCELED"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "planFile",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "registered",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "registered"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "teacher",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "center",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "center",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "skill",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "skill",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210221045639",
+  "entityTableName": "course",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

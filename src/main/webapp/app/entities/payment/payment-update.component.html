@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-payment-heading" jhiTranslate="itcenterbazaApp.payment.home.createOrEditLabel">Create or edit a Payment</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.paymentDate" for="field_paymentDate">Payment Date</label>
+                    <div class="d-flex">
+                        <input id="field_paymentDate" type="datetime-local" class="form-control" name="paymentDate" formControlName="paymentDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.paymentProvider" for="field_paymentProvider">Payment Provider</label>
+                    <input type="text" class="form-control" name="paymentProvider" id="field_paymentProvider"
+                           formControlName="paymentProvider"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                           formControlName="amount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.paymentStatus" for="field_paymentStatus">Payment Status</label>
+                    <select class="form-control" name="paymentStatus" formControlName="paymentStatus" id="field_paymentStatus">
+                        <option value="PENDING">{{ 'itcenterbazaApp.PaymentStatus.PENDING' | translate }}</option>
+                        <option value="PAID">{{ 'itcenterbazaApp.PaymentStatus.PAID' | translate }}</option>
+                        <option value="CANCELLED">{{ 'itcenterbazaApp.PaymentStatus.CANCELLED' | translate }}</option>
+                        <option value="REFUNDED">{{ 'itcenterbazaApp.PaymentStatus.REFUNDED' | translate }}</option>
+                        <option value="FAILED">{{ 'itcenterbazaApp.PaymentStatus.FAILED' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.curency" for="field_curency">Curency</label>
+                    <input type="text" class="form-control" name="curency" id="field_curency"
+                           formControlName="curency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.customerName" for="field_customerName">Customer Name</label>
+                    <input type="text" class="form-control" name="customerName" id="field_customerName"
+                           formControlName="customerName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.isEnough" for="field_isEnough">Is Enough</label>
+                    <input type="checkbox" class="form-control" name="isEnough" id="field_isEnough"
+                           formControlName="isEnough"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.isConfirmed" for="field_isConfirmed">Is Confirmed</label>
+                    <input type="checkbox" class="form-control" name="isConfirmed" id="field_isConfirmed"
+                           formControlName="isConfirmed"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <select class="form-control" id="field_modifiedBy" name="modifiedBy" formControlName="modifiedById">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.student" for="field_student">Student</label>
+                    <select class="form-control" id="field_student" name="student" formControlName="studentId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="participantOption.id" *ngFor="let participantOption of participants; trackBy: trackById">{{ participantOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="itcenterbazaApp.payment.method" for="field_method">Method</label>
+                    <select class="form-control" id="field_method" name="method" formControlName="methodId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="paymentMethodOption.id" *ngFor="let paymentMethodOption of paymentmethods; trackBy: trackById">{{ paymentMethodOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

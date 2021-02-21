@@ -1,0 +1,14 @@
+{
+  "itcenterbazaApp": {
+    "EventType": {
+      "null": "",
+      "MESSAGE": "MESSAGE",
+      "ERROR": "ERROR",
+      "PAYMENT": "PAYMENT",
+      "LOGIN": "LOGIN",
+      "CREATE_COURSE": "CREATE_COURSE",
+      "PARTICIPANT": "PARTICIPANT",
+      "REGISTERED": "REGISTERED"
+    }
+  }
+}

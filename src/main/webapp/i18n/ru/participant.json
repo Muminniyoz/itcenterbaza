@@ -1,0 +1,27 @@
+{
+  "itcenterbazaApp": {
+    "participant": {
+      "home": {
+        "title": "Participants",
+        "createLabel": "Создать новый Participant",
+        "createOrEditLabel": "Создать или отредактировать Participant",
+        "notFound": "No Participants found"
+      },
+      "created": "Новый Participant создан с идентификатором {{ param }}",
+      "updated": "Participant обновлен с идентификатором {{ param }}",
+      "deleted": "Participant удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Participant {{ id }}?"
+      },
+      "detail": {
+        "title": "Participant"
+      },
+      "startingDate": "Starting Date",
+      "active": "Active",
+      "status": "Status",
+      "contractNumber": "Contract Number",
+      "student": "Student",
+      "course": "Course"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "itcenterbazaApp": {
+    "registered": {
+      "home": {
+        "title": "Registereds",
+        "createLabel": "Create a new Registered",
+        "createOrEditLabel": "Create or edit a Registered",
+        "notFound": "No Registereds found"
+      },
+      "created": "A new Registered is created with identifier {{ param }}",
+      "updated": "A Registered is updated with identifier {{ param }}",
+      "deleted": "A Registered is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Registered {{ id }}?"
+      },
+      "detail": {
+        "title": "Registered"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "email": "Email",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "registerationDate": "Registeration Date",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "modifiedBy": "Modified By",
+      "course": "Course"
+    }
+  }
+}
