@@ -1,0 +1,226 @@
+/**  Enum START */
+enum Gender{
+	MALE, FEMALE, OTHER
+}
+enum CourseStatus{
+	ACTIVE,
+    PLANNING,
+    FINISHED,
+    CANCELED
+}
+enum ParticipantStatus{
+	ACTIVE,
+    LEAVE,
+    REMOVED,
+    COPLETED
+}
+enum PaymentStatus {
+	PENDING,
+	PAID,
+	CANCELLED,
+	REFUNDED,
+	FAILED
+}
+
+enum EventType{
+	MESSAGE,
+    ERROR,
+    PAYMENT,
+    LOGIN,
+    CREATE_COURSE,
+    PARTICIPANT,
+    REGISTERED 
+}
+
+/**  Entities START */
+
+entity Regions{
+	title String required 
+    info String
+    googleUrl String
+}
+
+entity Center{
+	title String required
+    info String
+    startDate LocalDate
+    googleMapUrl String
+}
+
+
+entity Skill {
+	titleUz String required
+    titleRu String 
+    titleEn String 
+    about TextBlob
+    planFile Blob
+}
+
+entity Teacher{
+   firstName String required,
+   lastName String required,
+   middleName String 
+   email String,
+   dateOfBirth LocalDate,
+   gender Gender,
+   registerationDate LocalDate,
+   telephone String,
+   mobile String,
+   fullPhotoUrl String,
+   active Boolean,
+   key String
+   about TextBlob
+   portfolia TextBlob
+   info Blob
+   leaveDate LocalDate
+   isShowingHome Boolean
+   image Blob
+}
+
+entity Course {
+	title String 
+    price Float
+    startDate LocalDate
+    status CourseStatus 
+    duration Integer
+    planFile Blob
+    
+}
+entity Registered{
+	firstName String required,
+   lastName String required,
+   middleName String 
+   email String,
+   dateOfBirth LocalDate,
+   gender Gender,
+   registerationDate LocalDate,
+   telephone String,
+   mobile String,
+}
+
+entity Student {
+   firstName String required,
+   lastName String required,
+   middleName String 
+   email String,
+   dateOfBirth LocalDate,
+   gender Gender,
+   registerationDate LocalDate,
+   telephone String,
+   mobile String,
+   thumbnailPhotoUrl String,
+   fullPhotoUrl String,
+   idNumber Integer required unique
+}
+entity Participant{
+	startingDate LocalDate
+    active Boolean
+    status ParticipantStatus
+    contractNumber String
+}
+
+entity PaymentMethodConfig {
+    key String,
+    value String,
+    note String,
+    enabled Boolean
+}
+entity PaymentMethod {
+	paymentMethod String required,
+	description String,
+	active Boolean
+}
+entity SystemConfig {
+    key String
+    value String 
+    note String
+    enabled Boolean
+}
+
+
+
+entity Payment {
+	paymentDate ZonedDateTime,
+	paymentProvider String,
+	amount BigDecimal,
+	paymentStatus PaymentStatus,
+	curency String,
+	customerName String	
+    isEnough Boolean
+    isConfirmed Boolean
+}
+
+entity EventHistory{
+    type EventType
+    text String
+    time ZonedDateTime   
+}
+/* Relationships */
+
+relationship ManyToOne {
+	Registered{modifiedBy} to User
+    Student{modifiedBy} to User
+    Teacher{modifiedBy} to User
+    Payment{modifiedBy} to User
+    Center{modifiedBy} to User
+}
+
+
+relationship ManyToOne {
+	Center{regions} to Regions
+}
+relationship ManyToOne {
+	EventHistory{center} to Center
+    EventHistory{user} to User
+}
+relationship ManyToMany {
+	EventHistory{openedUser} to User{openedEvent}
+}    
+
+relationship ManyToOne {
+	Participant{student} to Student,
+    Participant{course} to Course,
+  
+
+}
+
+relationship OneToMany {
+	Course{registered} to Registered,
+     PaymentMethod{conf} to PaymentMethodConfig{method}
+
+}
+relationship ManyToOne {
+    Payment{student} to Participant,
+    Payment{method} to PaymentMethod
+   
+}
+relationship ManyToMany {
+	Teacher{skills} to Skill{teacher}
+}
+
+relationship ManyToOne {
+	Course{teacher} to Teacher,
+    Course{center} to Center
+	Course{skill} to Skill
+}
+relationship ManyToOne {
+	Teacher{user} to User
+    Center{manager} to User
+    Regions{director} to User
+}
+
+
+
+
+/** Realationship end */
+/** Options */
+// Set pagination options
+paginate all with infinite-scroll
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+filter *
